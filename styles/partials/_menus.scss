@@ -1,0 +1,117 @@
+label {
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+.mainNav {
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        background: rgba(255,255,255,1);
+        a {
+            padding: 7px 10px;
+            display: block;
+            color: $primary;
+        }
+        a:hover{
+            color: $body-text;
+        }
+        .has-submenu {
+            a:after {
+                content: ' +';
+            }
+            &--1:hover {
+                .submenu--1 {
+                    display: block;
+                }
+            }
+            &--2:hover {
+                .submenu--2 {
+                    display: block;
+                }
+            }
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            z-index: 99;
+            min-width: 160px;
+            background: #fff;
+            box-shadow: 2px 2px 4px 0px #333;
+            a:after {
+                content: '';
+            }
+            li{
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 961px) {
+    label {
+        display: block;
+        cursor: pointer;
+        color: #000;
+    }
+    .mainNav .menu {
+        display: none;
+    }
+    .mainNav {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        .top-level li:first-child{
+            border-top: 1px solid #ccc;
+        }
+    }
+    img {
+        display: inline-block;
+    }
+    #toggle:checked+.menu {
+        display: block;
+    }
+    .mainNav .menu {
+        text-align: left;
+        a {
+            padding: 10px 10%;
+        }
+        li {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .has-submenu {
+            border: none;
+        }
+        .submenu {
+            position: relative;
+            width: 100%;
+            display: block;
+            box-shadow: none;
+            background: #f1f1f1;
+            a:before {
+                content: '-- '
+            }
+        }
+        .has-submenu a:after {
+            content: '';
+        }
+    }
+}

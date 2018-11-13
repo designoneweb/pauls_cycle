@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Playfair+Display:400,400i,700,900|Titillium+Web:700');
+//  General Font Families
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Titillium Web', serif;
+}
+
+// Font Sizing & Spacing
+html {
+    font-size: 18px;
+    line-height: 1.63;
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+
+// Links
+.mainNav a{
+    text-decoration: none;
+}
+
+// Top Bar
+.topBar{
+    font-size: 14px;
+    i{
+        font-size: 22px;
+    }
+}

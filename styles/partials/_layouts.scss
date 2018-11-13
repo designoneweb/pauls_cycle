@@ -1,0 +1,35 @@
+.row-fixed{
+    max-width: 960px;
+    margin: 0 auto;
+    @media screen and (max-width: 961px){
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.page-body .row-fixed{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.two-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    // For IE 11
+    background: #f1f1f1;
+    &__content{
+        width: 50%;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 961px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Phone-Only Styles
+@media screen and (max-width: 740px){
+    .no-phone{
+        display: none;
+    }
+}
